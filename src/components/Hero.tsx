@@ -55,48 +55,63 @@ export default function Hero() {
               fontSize: 'clamp(3rem, 10vw, 3.5rem)',
             }}
           >
-            <Typography
+            <Box
               component="span"
-              variant="h1"
-              sx={(theme) => ({
-                fontSize: 'inherit',
-                color: 'primary.main',
-                ...theme.applyStyles('dark', {
-                  color: 'primary.light',
-                }),
-              })}
+              sx={{ display: { xs: 'block', sm: 'inline-flex' }, alignItems: 'center' }}
             >
-              C
-            </Typography>
-            olton&nbsp;
-            <Typography
+              <Typography
+                component="span"
+                variant="h1"
+                sx={(theme) => ({
+                  fontSize: 'inherit',
+                  color: 'primary.main',
+                  ...theme.applyStyles('dark', {
+                    color: 'primary.light',
+                  }),
+                })}
+              >
+                C
+              </Typography>
+              olton&nbsp;
+            </Box>
+            <Box
               component="span"
-              variant="h1"
-              sx={(theme) => ({
-                fontSize: 'inherit',
-                color: 'primary.main',
-                ...theme.applyStyles('dark', {
-                  color: 'primary.light',
-                }),
-              })}
+              sx={{ display: { xs: 'block', sm: 'inline-flex' }, alignItems: 'center' }}
             >
-              E
-            </Typography>
+              <Typography
+                component="span"
+                variant="h1"
+                sx={(theme) => ({
+                  fontSize: 'inherit',
+                  color: 'primary.main',
+                  ...theme.applyStyles('dark', {
+                    color: 'primary.light',
+                  }),
+                })}
+              >
+                E
+              </Typography>
               ric&nbsp;
-            <Typography
+            </Box>
+            <Box
               component="span"
-              variant="h1"
-              sx={(theme) => ({ 
-                fontSize: 'inherit',
-                color: 'primary.main',
-                ...theme.applyStyles('dark', {
-                  color: 'primary.light',
-                }),
-              })}
+              sx={{ display: { xs: 'block', sm: 'inline-flex' }, alignItems: 'center' }}
             >
-              O
-            </Typography>
+              <Typography
+                component="span"
+                variant="h1"
+                sx={(theme) => ({
+                  fontSize: 'inherit',
+                  color: 'primary.main',
+                  ...theme.applyStyles('dark', {
+                    color: 'primary.light',
+                  }),
+                })}
+              >
+                O
+              </Typography>
               sterlund
+            </Box>
           </Typography>
           <Typography
             sx={{
