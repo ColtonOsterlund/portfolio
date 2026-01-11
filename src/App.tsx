@@ -8,10 +8,10 @@ import Projects from './components/Projects';
 import References from './components/References';
 import Proficiencies from './components/Proficiencies';
 import Resume from './components/Resume';
-import { styled } from '@mui/material';
+import { Box, styled } from '@mui/material';
 import Spline from '@splinetool/react-spline';
 
-const Background = styled('div')(({ theme }) => ({
+const Background = styled('div')(() => ({
   position: 'fixed',
   top: 0,
   left: 0,
@@ -25,9 +25,16 @@ export default function App(props: { disableCustomTheme?: boolean }) {
     <AppTheme {...props}>
       <CssBaseline enableColorScheme />
 
-      <Background>
+      <Box sx={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
+        zIndex: -1
+      }}>
         <Spline scene="https://prod.spline.design/UuVERXqinZTpnb-I/scene.splinecode" />
-      </Background>
+      </Box>
 
       <AppAppBar />
       <Hero />
@@ -43,6 +50,6 @@ export default function App(props: { disableCustomTheme?: boolean }) {
         <Contact />
 
       </div>
-    </AppTheme>
+    </AppTheme >
   );
 }
