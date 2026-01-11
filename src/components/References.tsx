@@ -8,7 +8,7 @@ import Container from '@mui/material/Container';
 import Grid from '@mui/material/Grid';
 import { useColorScheme } from '@mui/material/styles';
 
-const userTestimonials = [
+const references = [
   {
     avatar: <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />,
     name: 'Remy Sharp',
@@ -94,7 +94,7 @@ export default function Testimonials() {
 
   return (
     <Container
-      id="testimonials"
+      id="references"
       sx={{
         pt: { xs: 4, sm: 12 },
         pb: { xs: 8, sm: 16 },
@@ -117,7 +117,7 @@ export default function Testimonials() {
           gutterBottom
           sx={{ color: 'text.primary' }}
         >
-          Testimonials
+          References
         </Typography>
         <Typography variant="body1" sx={{ color: 'text.secondary' }}>
           See what our customers love about our products. Discover how we excel in
@@ -126,7 +126,7 @@ export default function Testimonials() {
         </Typography>
       </Box>
       <Grid container spacing={2}>
-        {userTestimonials.map((testimonial, index) => (
+        {references.map((reference, index) => (
           <Grid size={{ xs: 12, sm: 6, md: 4 }} key={index} sx={{ display: 'flex' }}>
             <Card
               variant="outlined"
@@ -143,7 +143,7 @@ export default function Testimonials() {
                   gutterBottom
                   sx={{ color: 'text.secondary' }}
                 >
-                  {testimonial.testimonial}
+                  {reference.testimonial}
                 </Typography>
               </CardContent>
               <Box
@@ -154,9 +154,9 @@ export default function Testimonials() {
                 }}
               >
                 <CardHeader
-                  avatar={testimonial.avatar}
-                  title={testimonial.name}
-                  subheader={testimonial.occupation}
+                  avatar={reference.avatar}
+                  title={reference.name}
+                  subheader={reference.occupation}
                 />
                 <img
                   src={logos[index]}

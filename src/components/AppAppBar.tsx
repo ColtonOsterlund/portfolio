@@ -35,6 +35,11 @@ export default function AppAppBar() {
     setOpen(newOpen);
   };
 
+  const scrollToElement = (id: string) => () => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    if (open) { toggleDrawer(false)(); };
+  }
+
   return (
     <AppBar
       position="fixed"
@@ -50,19 +55,19 @@ export default function AppAppBar() {
         <StyledToolbar variant="dense" disableGutters>
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
             <Sitemark />
-            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small" onClick={scrollToElement('hero')}>
               About
             </Button>
-            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small" onClick={scrollToElement('resume')}>
               Resume
             </Button>
-            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small" onClick={scrollToElement('projects')}>
               Projects
             </Button>
-            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small" onClick={scrollToElement('references')}>
               References
             </Button>
-            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small" onClick={scrollToElement('contact')}>
               Contact
             </Button>
           </Box>
@@ -92,11 +97,11 @@ export default function AppAppBar() {
                   </IconButton>
                 </Box>
 
-                <MenuItem>About</MenuItem>
-                <MenuItem>Resume</MenuItem>
-                <MenuItem>Projects</MenuItem>
-                <MenuItem>References</MenuItem>
-                <MenuItem>Contact</MenuItem>
+                <MenuItem onClick={scrollToElement('hero')}>About</MenuItem>
+                <MenuItem onClick={scrollToElement('resume')}>Resume</MenuItem>
+                <MenuItem onClick={scrollToElement('projects')}>Projects</MenuItem>
+                <MenuItem onClick={scrollToElement('references')}>References</MenuItem>
+                <MenuItem onClick={scrollToElement('contact')}>Contact</MenuItem>
               </Box>
             </Drawer>
           </Box>

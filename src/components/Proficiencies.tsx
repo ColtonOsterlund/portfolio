@@ -51,7 +51,7 @@ export default function Proficiencies() {
         align="center"
         sx={{ color: 'text.secondary' }}
       >
-        Self proclaimed proficiencies
+        Proficiencies
       </Typography>
       <Grid container sx={{ justifyContent: 'center', mt: 0.5, opacity: 0.6 }}>
         {logos.map((logo, index) => (
