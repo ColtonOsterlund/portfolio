@@ -28,7 +28,7 @@ export default function Hero() {
           'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)',
         ...theme.applyStyles('dark', {
           backgroundImage:
-            'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 16%), transparent)',
+            'radial-gradient(ellipse 80% 50% at 50% -20%, #002952, transparent)',
         }),
       })}
     >
@@ -124,7 +124,7 @@ export default function Hero() {
           </Typography>
         </Stack>
         <StyledBox id="developer">
-          <Spline scene="https://prod.spline.design/7X0Vd8egRE7aWSr2/scene.splinecode" />
+          <Spline scene="https://prod.spline.design/IAyRHpV-sLLCNOt9/scene.splinecode" />
         </StyledBox>
       </Container>
     </Box>

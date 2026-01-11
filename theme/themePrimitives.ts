@@ -52,7 +52,6 @@ export const gray = {
   500: 'hsl(220, 20%, 42%)',
   600: 'hsl(220, 20%, 35%)',
   700: 'hsl(220, 20%, 25%)',
-  750: 'hsl(225, 8%, 10%)',
   800: 'hsl(220, 30%, 6%)',
   900: 'hsl(220, 35%, 3%)',
 };
@@ -324,7 +323,7 @@ export const colorSchemes = {
       },
       divider: alpha(gray[700], 0.6),
       background: {
-        default: gray[750],
+        default: gray[900],
         paper: 'hsl(220, 30%, 7%)',
       },
       text: {
