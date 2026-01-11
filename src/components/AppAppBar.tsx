@@ -10,7 +10,6 @@ import MenuItem from '@mui/material/MenuItem';
 import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import CloseRoundedIcon from '@mui/icons-material/CloseRounded';
-import ColorModeIconDropdown from '../../theme/ColorModeIconDropdown';
 import Sitemark from './SitemarkIcon';
 
 const StyledToolbar = styled(Toolbar)(({ theme }) => ({
@@ -51,35 +50,23 @@ export default function AppAppBar() {
         <StyledToolbar variant="dense" disableGutters>
           <Box sx={{ flexGrow: 1, display: 'flex', alignItems: 'center', px: 0 }}>
             <Sitemark />
-            <Box sx={{ display: { xs: 'none', md: 'flex' } }}>
-              <Button variant="text" color="info" size="small">
-                About
-              </Button>
-              <Button variant="text" color="info" size="small">
-                Resume
-              </Button>
-              <Button variant="text" color="info" size="small">
-                Projects
-              </Button>
-              <Button variant="text" color="info" size="small">
-                References
-              </Button>
-              <Button variant="text" color="info" size="small">
-                Contact
-              </Button>
-            </Box>
-          </Box>
-          <Box
-            sx={{
-              display: { xs: 'none', md: 'flex' },
-              gap: 1,
-              alignItems: 'center',
-            }}
-          >
-            <ColorModeIconDropdown />
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+              About
+            </Button>
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+              Resume
+            </Button>
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+              Projects
+            </Button>
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+              References
+            </Button>
+            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small">
+              Contact
+            </Button>
           </Box>
           <Box sx={{ display: { xs: 'flex', md: 'none' }, gap: 1 }}>
-            <ColorModeIconDropdown size="medium" />
             <IconButton aria-label="Menu button" onClick={toggleDrawer(true)}>
               <MenuIcon />
             </IconButton>
