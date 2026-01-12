@@ -17,7 +17,6 @@ export default function Resume() {
         display: 'flex',
         flexDirection: 'column',
         alignItems: 'center',
-        gap: { xs: 3, sm: 6 },
         height: 'calc(2000px + 100vh)',
       }}
     >
