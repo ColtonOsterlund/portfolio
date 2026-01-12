@@ -3,6 +3,8 @@ import Box from '@mui/material/Box';
 import Container from '@mui/material/Container';
 import Proficiencies from './Proficiencies';
 import Spline from '@splinetool/react-spline';
+import { Button } from '@mui/material';
+import { Download } from '@mui/icons-material';
 
 export default function Resume() {
   return (
@@ -54,6 +56,9 @@ export default function Resume() {
           <Spline scene="https://prod.spline.design/PQNkpOVTiiBehOAz/scene.splinecode" />
         </Box>
       </Box>
+      <Button variant="outlined" component="a" href="/Colton Osterlund Resume.pdf" download startIcon={<Download />}>
+        Download PDF
+      </Button>
     </Container>
   );
 }
