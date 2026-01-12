@@ -23,7 +23,7 @@ export default function Resume() {
       <Box
         sx={{
           width: '100%',
-          textAlign: { sm: 'left', md: 'center' },
+          textAlign: 'center',
         }}
       >
         <Typography
