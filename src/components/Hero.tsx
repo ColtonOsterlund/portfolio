@@ -6,14 +6,12 @@ import { styled } from '@mui/material/styles';
 import Spline from '@splinetool/react-spline';
 
 const StyledBox = styled('div')(({ theme }) => ({
+  position: 'sticky',
+  top: 0,
   alignSelf: 'center',
   width: '100%',
-  height: 400,
-  marginTop: theme.spacing(8),
-  [theme.breakpoints.up('sm')]: {
-    marginTop: theme.spacing(10),
-    height: 700,
-  },
+  height: '100vh',
+  pointerEvents: 'none'
 }));
 
 export default function Hero() {
@@ -21,9 +19,11 @@ export default function Hero() {
     <Box
       id="hero"
       sx={(theme) => ({
+        display: 'flex',
+        flexDirection: 'column',
         width: '100%',
+        height: 'calc(2500px + 100vh)',
         backgroundRepeat: 'no-repeat',
-
         backgroundImage:
           'radial-gradient(ellipse 80% 50% at 50% -20%, hsl(210, 100%, 90%), transparent)',
         ...theme.applyStyles('dark', {
@@ -38,7 +38,6 @@ export default function Hero() {
           flexDirection: 'column',
           alignItems: 'center',
           pt: { xs: 14, sm: 20 },
-          pb: { xs: 8, sm: 12 },
         }}
       >
         <Stack
@@ -120,13 +119,21 @@ export default function Hero() {
               width: { sm: '100%', md: '80%' },
             }}
           >
-            Description about yourself.
+
           </Typography>
         </Stack>
-        <StyledBox id="developer">
-          <Spline scene="https://prod.spline.design/IAyRHpV-sLLCNOt9/scene.splinecode" />
-        </StyledBox>
       </Container>
+      <Box
+          sx={{
+            position: 'relative',
+            flex: 1,
+            width: '100%',
+          }}
+        >
+          <StyledBox id="developer">
+            <Spline scene="https://prod.spline.design/IAyRHpV-sLLCNOt9/scene.splinecode" />
+          </StyledBox>
+        </Box>
     </Box>
   );
 }
