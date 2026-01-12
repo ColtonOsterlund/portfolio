@@ -15,7 +15,6 @@ export default function App(props: { disableCustomTheme?: boolean }) {
       <AppAppBar />
       <Hero />
       <div>
-        <Divider />
         <Resume />
         <Divider />
         <Projects />

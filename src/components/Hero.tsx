@@ -102,15 +102,6 @@ export default function Hero() {
               sterlund
             </Box>
           </Typography>
-          <Typography
-            sx={{
-              textAlign: 'center',
-              color: 'text.secondary',
-              width: { sm: '100%', md: '80%' },
-            }}
-          >
-
-          </Typography>
         </Stack>
       </Container>
       <Box
