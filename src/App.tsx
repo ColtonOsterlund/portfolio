@@ -5,7 +5,6 @@ import AppAppBar from './components/AppAppBar';
 import Hero from './components/Hero';
 import Contact from './components/Contact';
 import Projects from './components/Projects';
-import References from './components/References';
 import Resume from './components/Resume';
 
 export default function App(props: { disableCustomTheme?: boolean }) {
@@ -18,8 +17,6 @@ export default function App(props: { disableCustomTheme?: boolean }) {
         <Resume />
         <Divider />
         <Projects />
-        <Divider />
-        <References />
         <Divider />
         <Contact />
 
