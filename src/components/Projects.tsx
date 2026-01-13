@@ -103,26 +103,6 @@ export function MobileLayout({
         ))}
       </Box>
       <Card variant="outlined">
-        <Box
-          sx={(theme) => ({
-            mb: 2,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            minHeight: 280,
-            backgroundImage: 'var(--items-imageLight)',
-            ...theme.applyStyles('dark', {
-              backgroundImage: 'var(--items-imageDark)',
-            }),
-          })}
-          style={
-            items[selectedItemIndex]
-              ? ({
-                '--items-imageLight': items[selectedItemIndex].imageLight,
-                '--items-imageDark': items[selectedItemIndex].imageDark,
-              } as any)
-              : {}
-          }
-        />
         <Box sx={{ px: 2, pb: 2 }}>
           <Typography
             gutterBottom
@@ -134,6 +114,71 @@ export function MobileLayout({
             {selectedFeature.description}
           </Typography>
         </Box>
+        <Box
+            sx={{
+              width: '100%',
+              height: 500,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              mt: 1,
+            }}
+          >
+
+            {items[selectedItemIndex].splineScene && (
+              <Spline
+                scene={items[selectedItemIndex].splineScene}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                }}
+              />
+            )}
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 2,
+              justifyContent: 'center',
+              mt: 1,
+            }}
+          >
+
+            {items[selectedItemIndex].github && (
+              <Button
+                variant="contained"
+                color="primary"
+                href={items[selectedItemIndex].github}
+                target="_blank"
+              >
+                GitHub
+              </Button>
+            )}
+
+            {items[selectedItemIndex].downloadWindows && (
+              <Button
+                variant="outlined"
+                component="a"
+                href={items[selectedItemIndex].downloadWindows}
+                download
+                startIcon={<Download />}
+              >
+                Windows
+              </Button>
+            )}
+
+            {items[selectedItemIndex].downloadMac && (
+              <Button
+                variant="outlined"
+                component="a"
+                href={items[selectedItemIndex].downloadMac}
+                download
+                startIcon={<Download />}
+              >
+                Mac
+              </Button>
+            )}
+          </Box>
       </Card>
     </Box>
   );
@@ -237,7 +282,7 @@ export default function Projects() {
           sx={{
             height: '100%',
             width: '100%',
-            display: 'flex',
+            display: { xs: 'none', sm: 'flex' },
             flexDirection: 'column',
             alignItems: 'center',
             justifyContent: 'flex-start',
