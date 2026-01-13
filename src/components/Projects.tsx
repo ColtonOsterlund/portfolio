@@ -10,6 +10,8 @@ import { styled } from '@mui/material/styles';
 import DevicesRoundedIcon from '@mui/icons-material/DevicesRounded';
 import EdgesensorHighRoundedIcon from '@mui/icons-material/EdgesensorHighRounded';
 import ViewQuiltRoundedIcon from '@mui/icons-material/ViewQuiltRounded';
+import Spline from '@splinetool/react-spline';
+import { Download } from '@mui/icons-material';
 
 const items = [
   {
@@ -19,6 +21,10 @@ const items = [
       'Blender VST project description.',
     imageLight: `url(https://mui.com/static/images/templates/templates-images/dash-light.png")`,
     imageDark: `url(https://mui.com/static/images/templates/templates-images/dash-dark.png")`,
+    splineScene: 'https://prod.spline.design/e2jcR3HAeuCfIGXB/scene.splinecode',
+    github: 'https://github.com/your/blender-project',
+    downloadWindows: "/Blender V4 Installer.exe",
+    downloadMac: "/Blender V4 Installer.dmg",
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
@@ -111,9 +117,9 @@ export function MobileLayout({
           style={
             items[selectedItemIndex]
               ? ({
-                  '--items-imageLight': items[selectedItemIndex].imageLight,
-                  '--items-imageDark': items[selectedItemIndex].imageDark,
-                } as any)
+                '--items-imageLight': items[selectedItemIndex].imageLight,
+                '--items-imageDark': items[selectedItemIndex].imageDark,
+              } as any)
               : {}
           }
         />
@@ -157,9 +163,7 @@ export default function Projects() {
           variant="body1"
           sx={{ color: 'text.secondary', mb: { xs: 2, sm: 4 } }}
         >
-          Provide a brief overview of the key features of the product. For example,
-          you could list the number of features, their types or benefits, and
-          add-ons.
+          My personal projects are a reflection of my passions outside of programming, focusing on software for music production.
         </Typography>
       </Box>
       <Box
@@ -228,44 +232,85 @@ export default function Projects() {
             selectedFeature={selectedFeature}
           />
         </div>
-        <Box
+        <Card
+          variant="outlined"
           sx={{
-            display: { xs: 'none', sm: 'flex' },
-            width: { xs: '100%', md: '70%' },
-            height: 'var(--items-image-height)',
+            height: '100%',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'flex-start',
+            p: 2,
+            gap: 2,
           }}
         >
-          <Card
-            variant="outlined"
+
+          <Box
             sx={{
-              height: '100%',
               width: '100%',
-              display: { xs: 'none', sm: 'flex' },
-              pointerEvents: 'none',
+              height: 500,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
             }}
           >
-            <Box
-              sx={(theme) => ({
-                m: 'auto',
-                width: 420,
-                height: 500,
-                backgroundSize: 'contain',
-                backgroundImage: 'var(--items-imageLight)',
-                ...theme.applyStyles('dark', {
-                  backgroundImage: 'var(--items-imageDark)',
-                }),
-              })}
-              style={
-                items[selectedItemIndex]
-                  ? ({
-                      '--items-imageLight': items[selectedItemIndex].imageLight,
-                      '--items-imageDark': items[selectedItemIndex].imageDark,
-                    } as any)
-                  : {}
-              }
-            />
-          </Card>
-        </Box>
+
+            {items[selectedItemIndex].splineScene && (
+              <Spline
+                scene={items[selectedItemIndex].splineScene}
+                style={{
+                  width: '100%',
+                  height: '100%',
+                }}
+              />
+            )}
+          </Box>
+          <Box
+            sx={{
+              display: 'flex',
+              gap: 2,
+              justifyContent: 'center',
+              mt: 1,
+            }}
+          >
+
+            {items[selectedItemIndex].github && (
+              <Button
+                variant="contained"
+                color="primary"
+                href={items[selectedItemIndex].github}
+                target="_blank"
+              >
+                GitHub
+              </Button>
+            )}
+
+            {items[selectedItemIndex].downloadWindows && (
+              <Button
+                variant="outlined"
+                component="a"
+                href={items[selectedItemIndex].downloadWindows}
+                download
+                startIcon={<Download />}
+              >
+                Windows
+              </Button>
+            )}
+
+            {items[selectedItemIndex].downloadMac && (
+              <Button
+                variant="outlined"
+                component="a"
+                href={items[selectedItemIndex].downloadMac}
+                download
+                startIcon={<Download />}
+              >
+                Mac
+              </Button>
+            )}
+          </Box>
+        </Card>
       </Box>
     </Container>
   );

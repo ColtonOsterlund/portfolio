@@ -64,9 +64,6 @@ export default function AppAppBar() {
             <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small" onClick={scrollToElement('projects')}>
               Projects
             </Button>
-            <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small" onClick={scrollToElement('references')}>
-              References
-            </Button>
             <Button sx={{ display: { xs: 'none', md: 'flex' }, flex: 1 }} variant="text" color="info" size="small" onClick={scrollToElement('contact')}>
               Contact
             </Button>
@@ -100,7 +97,6 @@ export default function AppAppBar() {
                 <MenuItem onClick={scrollToElement('hero')}>About</MenuItem>
                 <MenuItem onClick={scrollToElement('resume')}>Resume</MenuItem>
                 <MenuItem onClick={scrollToElement('projects')}>Projects</MenuItem>
-                <MenuItem onClick={scrollToElement('references')}>References</MenuItem>
                 <MenuItem onClick={scrollToElement('contact')}>Contact</MenuItem>
               </Box>
             </Drawer>
