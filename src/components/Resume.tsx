@@ -7,8 +7,6 @@ import { Download } from '@mui/icons-material';
 import { useState } from 'react';
 
 export default function Resume() {
-  const [activePage, setActivePage] = useState(1);
-
   return (
     <Container
       id="resume"
@@ -38,52 +36,34 @@ export default function Resume() {
       </Box>
       <Box
         sx={{
-          position: 'relative',
+          display: 'flex',
+          flexDirection: { xs: 'column', md: 'row' },
+          gap: 2,
           width: '100%',
-          aspectRatio: '1249/833'
         }}
       >
         <Box
           sx={{
-            position: 'absolute',
-            inset: 0,
-            opacity: activePage === 1 ? 1 : 0,
-            transition: 'opacity 0.6s ease',
-            pointerEvents: activePage === 1 ? 'auto' : 'none',
+            flex: 1,
+            minHeight: '100vh',
+            position: 'relative',
           }}
         >
           <Spline scene="https://prod.spline.design/PQNkpOVTiiBehOAz/scene.splinecode" />
         </Box>
         <Box
           sx={{
-            position: 'absolute',
-            inset: 0,
-            opacity: activePage === 2 ? 1 : 0,
-            transition: 'opacity 0.6s ease',
-            pointerEvents: activePage === 2 ? 'auto' : 'none',
+            flex: 1,
+            minHeight: '100vh',
+            position: 'relative',
           }}
         >
           <Spline scene="https://prod.spline.design/qWc2OYsIAA4MkK8G/scene.splinecode" />
         </Box>
       </Box>
-      <Box sx={{ display: 'flex', gap: 2, pt: 4, justifyContent: 'center' }}>
-        <Button
-          variant={activePage === 1 ? 'contained' : 'outlined'}
-          onClick={() => setActivePage(1)}
-        >
-          Page 1
-        </Button>
-
-        <Button
-          variant={activePage === 2 ? 'contained' : 'outlined'}
-          onClick={() => setActivePage(2)}
-        >
-          Page 2
-        </Button>
-        <Button variant="outlined" component="a" href="/Colton Osterlund Resume.pdf" download startIcon={<Download />}>
+      <Button variant="outlined" component="a" href="/Colton Osterlund Resume.pdf" download startIcon={<Download />} sx={{ mt: 4 }}>
         Download PDF
       </Button>
-      </Box>
     </Container>
   );
 }
