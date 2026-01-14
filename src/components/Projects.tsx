@@ -194,7 +194,7 @@ export default function Projects() {
   React.useEffect(() => {
     const interval = setInterval(() => {
       setDescriptionCount(prev => (prev + 1) % 5);
-    }, 2000);
+    }, 3000);
 
     return () => clearInterval(interval);
   }, []);
