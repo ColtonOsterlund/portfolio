@@ -22,9 +22,10 @@ const items = [
     imageLight: `url(https://mui.com/static/images/templates/templates-images/dash-light.png")`,
     imageDark: `url(https://mui.com/static/images/templates/templates-images/dash-dark.png")`,
     splineScene: 'https://prod.spline.design/e2jcR3HAeuCfIGXB/scene.splinecode',
-    github: 'https://github.com/your/blender-project',
+    github: 'https://github.com/ColtonOsterlund/blender',
     downloadWindows: "/Blender V4 Installer.exe",
     downloadMac: "/Blender V4 Installer.dmg",
+    downloadDemo: "/Blender Demo.mp4",
   },
   {
     icon: <EdgesensorHighRoundedIcon />,
@@ -33,6 +34,7 @@ const items = [
       'MIDI generator project description.',
     imageLight: `url(https://mui.com/static/images/templates/templates-images/mobile-light.png")`,
     imageDark: `url(https://mui.com/static/images/templates/templates-images/mobile-dark.png")`,
+    github: 'https://github.com/ColtonOsterlund/music_generator',
   },
 ];
 
@@ -135,7 +137,6 @@ export function MobileLayout({
               mt: 1,
             }}
           >
-
             {items[selectedItemIndex].github && (
               <Button
                 variant="contained"
@@ -146,7 +147,17 @@ export function MobileLayout({
                 GitHub
               </Button>
             )}
-
+            {items[selectedItemIndex].downloadDemo && (
+              <Button
+                variant="outlined"
+                component="a"
+                href={items[selectedItemIndex].downloadDemo}
+                download
+                startIcon={<Download />}
+              >
+                Demo (v3.0)
+              </Button>
+            )}
             {items[selectedItemIndex].downloadWindows && (
               <Button
                 variant="outlined"
@@ -155,10 +166,9 @@ export function MobileLayout({
                 download
                 startIcon={<Download />}
               >
-                Windows
+                Windows (v3.0)
               </Button>
             )}
-
             {items[selectedItemIndex].downloadMac && (
               <Button
                 variant="outlined"
@@ -167,7 +177,7 @@ export function MobileLayout({
                 download
                 startIcon={<Download />}
               >
-                Mac
+                Mac (v3.0)
               </Button>
             )}
           </Box>
@@ -311,7 +321,6 @@ export default function Projects() {
               mt: 1,
             }}
           >
-
             {items[selectedItemIndex].github && (
               <Button
                 variant="contained"
@@ -322,7 +331,17 @@ export default function Projects() {
                 GitHub
               </Button>
             )}
-
+            {items[selectedItemIndex].downloadDemo && (
+              <Button
+                variant="outlined"
+                component="a"
+                href={items[selectedItemIndex].downloadDemo}
+                download
+                startIcon={<Download />}
+              >
+                Demo (v3.0)
+              </Button>
+            )}
             {items[selectedItemIndex].downloadWindows && (
               <Button
                 variant="outlined"
@@ -331,10 +350,9 @@ export default function Projects() {
                 download
                 startIcon={<Download />}
               >
-                Windows
+                Windows (v3.0)
               </Button>
             )}
-
             {items[selectedItemIndex].downloadMac && (
               <Button
                 variant="outlined"
@@ -343,7 +361,7 @@ export default function Projects() {
                 download
                 startIcon={<Download />}
               >
-                Mac
+                Mac (v3.0)
               </Button>
             )}
           </Box>
