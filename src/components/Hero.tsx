@@ -217,7 +217,7 @@ export default function Hero() {
                     transition: 'opacity 0.2s linear',
                   }}
                 >
-                  Continue scrolling to see my work.
+                  Continue scrolling to see more of my work.
                 </Typography>
               </Box>
             </Box>
